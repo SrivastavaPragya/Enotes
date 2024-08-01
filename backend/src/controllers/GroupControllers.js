@@ -47,7 +47,24 @@ const { Group } = require("../models");
     }
 };
 
+
+const getGroupById = async (req, res) => {
+    try {
+        const groupId = req.params.id; // Get the group ID from the URL parameters
+        const group = await Group.findById(groupId); // Find the group by ID using Mongoose
+
+        if (!group) {
+            return res.status(404).json({ message: "Group not found." });
+        }
+
+        res.json(group);
+    } catch (error) {
+        console.error('Failed to retrieve group:', error);
+        res.status(500).json({ message: error.message });
+    }
+};
 module.exports = {
     createGroup,
-    getGroups
+    getGroups,
+    getGroupById
 };

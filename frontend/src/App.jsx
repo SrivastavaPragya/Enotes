@@ -2,7 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import HomePage from "./Pages/HomePage";
-import NotesPage from "./Pages/NotesPage";
+import Notes from "./components/Notes/Notes";
+import './App.css'
+
 
 const App = () => {
   return (
@@ -11,7 +13,7 @@ const App = () => {
         <Sidebar />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/notes" element={<NotesPage />} />
+          <Route path="/notes/:groupId" element={<Notes />} />
         </Routes>
       </Router>
     </div>
