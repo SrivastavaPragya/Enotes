@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const groupSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  color: { type: String, required: true }, // Store color as a hex string
+  color: { type: String, required: false }, // Store color as a hex string
   initials: {
     type: String,
     required: true,

@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import HomePage from "./Pages/HomePage";
 import Notes from "./components/Notes/Notes";
-import './App.css'
-
+import "./styles/App.css";
 
 const App = () => {
   return (
